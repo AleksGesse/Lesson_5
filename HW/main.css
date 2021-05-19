@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-color: rgba(205, 92, 92, 0.5);
+}
+
+.wrapper {
+    background-color: rgba(240, 128, 128, 0.5);
+    border: 5px solid rgba(0, 139, 139, 0.3);
+    border-radius: 5%;
+    height: 400px;
+    width: 400px;
+    margin:auto;
+    margin-top: 150px;
+    position: relative;
+}
+
+.circle-animation {
+    background-color:rgb(205, 92, 92);
+    border: 3px solid rgb(0, 139, 139);
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation-name: movecircle;
+    animation-duration: 7s;
+    animation-iteration-count: 5;
+    animation-timing-function: ease;
+}
+
+.wrapper-button-section {
+    background-color: rgb(0, 139, 139);
+    border: 2px solid rgb(105, 224, 224);
+    text-align: center;
+    margin-top: 70px;
+    padding: 30px;
+    height: 100px;
+}
+
+.click-me-button-section {
+    width: 200px;
+    border: 2px solid rgba(240, 128, 128, 0.8);
+    border-radius: 5%;
+    font-size: 15px;
+    color: rgb(105, 224, 224);
+    padding: 10px 25px;
+    background-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.click-me-button-section:hover {
+    width: 200px;
+    border: 2px solid rgb(105, 224, 224);
+    border-radius: 30%;
+    font-size: 15px;
+    color: rgb(105, 224, 224);
+    padding: 10px 25px;
+    background-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation-name: clickme;
+    animation-duration: 600ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+.click-me-button-section:active {
+    /* width: 120px;
+    border: 2px solid rgba(236, 193, 193, 0.8);
+    border-radius: 70%;
+    box-shadow: 0 -3px rgba(92, 27, 59, 0.7) inset;
+    background-color: rgba(196, 77, 132, 0.5);
+    background: linear-gradient(#ad7b91, #5e3f4d) #ad7b91;
+    margin-top: 2px;*/
+    transform: scale(2) rotateZ(360deg);
+    opacity: 0;
+    visibility:hidden;
+    transition: .8s;
+}
+
+@keyframes movecircle {
+    0% {
+        transform: translateX(0px) scale(1.5);
+        animation-timing-function: ease-in-out;
+        opacity: 0.3;
+    }
+    15% {
+        transform: translateX(0px);
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+        border-radius: 50%;
+    }
+    25% {
+        transform: translateX(290px);
+        animation-timing-function: ease-in-out;
+        border-radius: 25%;
+        background-color: rgb(233, 150, 122);
+    }
+    50% {
+        transform: translatex(290px) translateY(290px) scale(0.5);
+        animation-timing-function: cubic-bezier(0.4, 0.04, 0.33, 0.335);
+        border: transparent;
+        border-radius: 10%;
+        background-color: rgb(0220, 20, 60);
+    }
+    75% {
+        transform: translatex(0px) translateY(290px);
+        animation-timing-function: cubic-bezier(0.33, 0.33, 0.33, 0.33);
+        border-radius: 25%;
+        background-color: rgb(250, 128, 114);
+    }
+    100% {
+        transform: translatex(0px) translateY(0px);
+        animation-timing-function: cubic-bezier(0.25, 0.25, 0.25, 0.25);
+        border-radius: 50%;
+    }
+}
+
+@keyframes clickme {
+    0% {
+        transform: rotateZ(0);
+    }
+    25% {
+        transform: rotateZ(-5deg);
+        animation-timing-function: ease-in;
+        border-radius: 50%;
+        background-color: rgba(233, 150, 122, 0.5);
+    }
+    /* 50% {
+        transform: rotateZ(0deg);
+        border: transparent;
+        border-radius: 20%;
+    } */
+    75% {
+        transform: rotateZ(5deg);
+        border-radius: 50%;
+        background-color:rgba(233, 150, 122, 0.5);
+    }
+}
